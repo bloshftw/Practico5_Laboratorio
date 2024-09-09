@@ -12,5 +12,11 @@ public class Practico5_Laboratorio {
         Contacto empelado2 = new Contacto(43123899,"Luciano","Rodriguez","Villa Mercedes","asia 540");
         Contacto empelado3 = new Contacto(43654678,"Martin","perez","San luis","teniente turrado 550");
         */
+    
+        Vista vista = new Vista();
+        
+        vista.setVisible(true);
+        
+        
     }
 }

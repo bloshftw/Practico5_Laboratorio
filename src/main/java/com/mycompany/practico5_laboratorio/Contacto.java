@@ -7,6 +7,12 @@ public class Contacto {
 private long dni;
 private String nombre, apellido, ciudad, direccion;
 
+    public Contacto() {
+    }
+
+
+
+
     public Contacto(long dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
