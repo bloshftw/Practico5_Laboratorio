@@ -45,7 +45,7 @@ public void agregarContacto(Long telefono, Contacto chaval){
     }
 
     
-public void buscarContacto(long input_telefono){
+public Contacto buscarContacto(long input_telefono){
      Iterator<Long> keyIterator = contactos.keySet().iterator();
         
         while (keyIterator.hasNext()) {
@@ -57,10 +57,12 @@ public void buscarContacto(long input_telefono){
                 System.out.println("Apellido: "+contactos.get(key).getApellido());
                 System.out.println("Direccion: "+contactos.get(key).getDireccion());
                 System.out.println("Ciudad: "+contactos.get(key).getCiudad());
+                return contactos.get(key);
             } else {
-                
+                return null;
             }
         }
+        return null;
 }
 
 public void buscarTelefono(){}

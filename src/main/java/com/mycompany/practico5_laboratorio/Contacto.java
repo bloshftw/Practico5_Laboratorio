@@ -60,7 +60,11 @@ private String nombre, apellido, ciudad, direccion;
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+    
+    @Override
+    public String toString() {
+        return "Dni: "+dni+" Nombre: " +nombre+" Apellido: "+apellido+" Ciudad: "+ciudad+" Direccion:"+direccion;
+    }
 
     
 }

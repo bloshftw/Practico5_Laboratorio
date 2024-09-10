@@ -4,6 +4,8 @@
  */
 package com.mycompany.practico5_laboratorio;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -240,8 +242,8 @@ Directorio x = new Directorio();
     private void jBBuscarTellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarTellActionPerformed
         
         long input_telefono = Long.parseLong( jTTelefono.getText());
-        x.buscarContacto(input_telefono);
-         
+        
+        JOptionPane.showMessageDialog(this, x.buscarContacto(input_telefono).toString());
     }//GEN-LAST:event_jBBuscarTellActionPerformed
 
     
