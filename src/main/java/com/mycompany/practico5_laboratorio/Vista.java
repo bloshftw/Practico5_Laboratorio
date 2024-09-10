@@ -102,6 +102,11 @@ Directorio x = new Directorio();
         jLabel1.setText("Telefono:");
 
         jBNuevo.setText("Nuevo");
+        jBNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBNuevoActionPerformed(evt);
+            }
+        });
 
         jBAgregar.setText("Guardar");
         jBAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,8 +284,19 @@ Directorio x = new Directorio();
     }//GEN-LAST:event_jBAgregarActionPerformed
 
     private void jTDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTDniActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jTDniActionPerformed
+
+    private void jBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNuevoActionPerformed
+
+     jTDni.setText("");
+       jTNombre.setText("");
+       jTCiudad.setText("");
+       jTApellido.setText("");
+       jTDirec.setText("");
+       jTTelefono.setText("");
+
+    }//GEN-LAST:event_jBNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,7 +352,7 @@ Directorio x = new Directorio();
     private javax.swing.JTextField jTApellido;
     private javax.swing.JTextField jTCiudad;
     private javax.swing.JTextField jTDirec;
-    javax.swing.JTextField jTDni;
+    private javax.swing.JTextField jTDni;
     private javax.swing.JTextField jTNombre;
     private javax.swing.JTextField jTTelefono;
     // End of variables declaration//GEN-END:variables
