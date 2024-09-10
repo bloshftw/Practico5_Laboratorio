@@ -4,9 +4,10 @@
  */
 package com.mycompany.practico5_laboratorio;
 
+
 /**
  *
- * @author Lucia
+ * @author gRUPO 5
  */
 public class Vista extends javax.swing.JFrame {
 
@@ -19,7 +20,7 @@ public class Vista extends javax.swing.JFrame {
         this.setSize(500, 500);
         this.setLocationRelativeTo(null);
     }
-
+Directorio x = new Directorio();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,6 +71,12 @@ public class Vista extends javax.swing.JFrame {
         jLabelDirec.setText("Direccion:");
 
         jLabelCiudad.setText("Ciudad:");
+
+        jTDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTDniActionPerformed(evt);
+            }
+        });
 
         jTNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,10 +201,11 @@ public class Vista extends javax.swing.JFrame {
                     .addComponent(jLabelDirec)
                     .addComponent(jTDirec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCiudad)
-                    .addComponent(jTCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBBuscarDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBBuscarDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelCiudad)
+                        .addComponent(jTCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -230,9 +238,12 @@ public class Vista extends javax.swing.JFrame {
     }//GEN-LAST:event_jTCiudadActionPerformed
 
     private void jBBuscarTellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarTellActionPerformed
-        // TODO add your handling code here:
+        
+        long input_telefono = Long.parseLong( jTTelefono.getText());
+        x.buscarContacto(input_telefono);
+         
     }//GEN-LAST:event_jBBuscarTellActionPerformed
-Directorio x = new Directorio();
+
     
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
        long input_dni = Long.parseLong(jTDni.getText());
@@ -264,6 +275,10 @@ Directorio x = new Directorio();
       
        
     }//GEN-LAST:event_jBAgregarActionPerformed
+
+    private void jTDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTDniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,7 +334,7 @@ Directorio x = new Directorio();
     private javax.swing.JTextField jTApellido;
     private javax.swing.JTextField jTCiudad;
     private javax.swing.JTextField jTDirec;
-    private javax.swing.JTextField jTDni;
+    javax.swing.JTextField jTDni;
     private javax.swing.JTextField jTNombre;
     private javax.swing.JTextField jTTelefono;
     // End of variables declaration//GEN-END:variables

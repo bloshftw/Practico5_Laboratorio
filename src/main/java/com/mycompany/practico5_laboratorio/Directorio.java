@@ -1,9 +1,11 @@
 
 package com.mycompany.practico5_laboratorio;
 
+import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import javax.swing.JOptionPane;
 
 
 public class Directorio {
@@ -24,13 +26,6 @@ private TreeSet<Long> listaTelefono;
         
     }
 
-
-
-
-   
-    
-    
-
 public void agregarContacto(Long telefono, Contacto chaval){
 
    if (listaTelefono.contains(telefono)){
@@ -46,14 +41,24 @@ public void agregarContacto(Long telefono, Contacto chaval){
        
    } 
    
-   
-   
-   
-        
+      
     }
 
     
-public void buscarContacto(){}
+public void buscarContacto(long input_telefono){
+     Iterator<Long> keyIterator = contactos.keySet().iterator();
+        
+        while (keyIterator.hasNext()) {
+            Long key = keyIterator.next();
+            if (key.equals(input_telefono)) {
+                System.out.println("Clave " + key + " encontrada, valor: " + contactos.get(key));
+                Vista x = new Vista();
+                 x.jTDni.setText("DNI:" + contactos.get(key).getDni());
+            } else {
+                
+            }
+        }
+}
 
 public void buscarTelefono(){}
 
