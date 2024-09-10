@@ -63,7 +63,7 @@ private String nombre, apellido, ciudad, direccion;
     
     @Override
     public String toString() {
-        return "Dni: "+dni+" Nombre: " +nombre+" Apellido: "+apellido+" Ciudad: "+ciudad+" Direccion:"+direccion;
+        return " Dni: "+dni+" \n Nombre: " +nombre+" \n Apellido: "+apellido+" \n Ciudad: "+ciudad+" \n Direccion:"+direccion;
     }
 
     
