@@ -51,9 +51,12 @@ public void buscarContacto(long input_telefono){
         while (keyIterator.hasNext()) {
             Long key = keyIterator.next();
             if (key.equals(input_telefono)) {
-                System.out.println("Clave " + key + " encontrada, valor: " + contactos.get(key));
-                Vista x = new Vista();
-                 x.jTDni.setText("DNI:" + contactos.get(key).getDni());
+                System.out.println("Clave " + key + " encontrada");
+                System.out.println("DNI: "+contactos.get(key).getDni());
+                System.out.println("Nombre: "+contactos.get(key).getNombre());
+                System.out.println("Apellido: "+contactos.get(key).getApellido());
+                System.out.println("Direccion: "+contactos.get(key).getDireccion());
+                System.out.println("Ciudad: "+contactos.get(key).getCiudad());
             } else {
                 
             }
