@@ -122,6 +122,11 @@ Directorio x = new Directorio();
         jBBuscarDireccion.setText("Buscar");
 
         jBBuscarApellido.setText("Buscar");
+        jBBuscarApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBuscarApellidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,6 +302,17 @@ Directorio x = new Directorio();
        jTTelefono.setText("");
 
     }//GEN-LAST:event_jBNuevoActionPerformed
+
+    
+    /*FUNCION PARA BUSCAR CONTACTOS EN BASE A SU APELLIDO, RETORNA EL NRO DE TELEFONO*/
+    private void jBBuscarApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarApellidoActionPerformed
+
+        
+        Long TelAsociado = x.buscarTelefono(jTApellido.getText());
+        
+        JOptionPane.showMessageDialog(this, "Numero Asociado: " + TelAsociado);
+        
+    }//GEN-LAST:event_jBBuscarApellidoActionPerformed
 
     /**
      * @param args the command line arguments

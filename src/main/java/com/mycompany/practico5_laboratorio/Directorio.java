@@ -65,7 +65,32 @@ public Contacto buscarContacto(long input_telefono){
         return null;
 }
 
-public void buscarTelefono(){}
+public Long buscarTelefono(String apellido){
+
+ for (Entry<Long, Contacto> entry : contactos.entrySet()) {
+
+        Contacto contacto = entry.getValue();
+
+            if (contacto.getApellido().equalsIgnoreCase(apellido)){
+                
+                System.out.println("Telefono encontrado: " + entry.getKey());
+                return entry.getKey();
+                
+                
+                
+            } 
+            }
+            
+         
+           return null;
+ 
+ }
+   
+   
+
+
+ 
+
 
 public void buscarContactos(){}
 
