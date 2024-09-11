@@ -67,8 +67,12 @@ public Contacto buscarContacto(long input_telefono){
 
 public Long buscarTelefono(String apellido){
 
+    
+    /*Se utiliza este FOR con el metodo "Entry" que devuelve la dupla de valores del TreeMap(Telefono, Contacto)*/
+    /*Para despues poder compararlos, y en caso de encontrarlo se retorna el telefono asociado*/
  for (Entry<Long, Contacto> entry : contactos.entrySet()) {
-
+         
+     /*Aca se guarda en la variable de tipo Contacto el contacto que coincide con la key(Telefono)*/
         Contacto contacto = entry.getValue();
 
             if (contacto.getApellido().equalsIgnoreCase(apellido)){
