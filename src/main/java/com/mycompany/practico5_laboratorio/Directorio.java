@@ -122,7 +122,15 @@ public Contacto buscarContactos(String ciudad){
 
 
 
-public void borrarContacto(){}
-
-
+public void borrarContacto(long input_telefono){
+    Iterator<Long> keyIterator = contactos.keySet().iterator();
+        
+        while (keyIterator.hasNext()) {
+            Long key = keyIterator.next();
+            if (key.equals(input_telefono)) {
+                contactos.remove(key);
+                
+            } 
+        }
+}
 }

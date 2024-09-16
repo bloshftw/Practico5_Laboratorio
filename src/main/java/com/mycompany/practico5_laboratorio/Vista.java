@@ -116,8 +116,18 @@ Directorio x = new Directorio();
         });
 
         jBBorrar.setText("Borrar");
+        jBBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBorrarActionPerformed(evt);
+            }
+        });
 
         jBSalir.setText("Salir");
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
 
         jBBuscarDireccion.setText("Buscar");
         jBBuscarDireccion.addActionListener(new java.awt.event.ActionListener() {
@@ -329,6 +339,18 @@ Directorio x = new Directorio();
       JOptionPane.showMessageDialog(this, "Contacto encontrado: " + contac);
       
     }//GEN-LAST:event_jBBuscarDireccionActionPerformed
+
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+
+
+    }//GEN-LAST:event_jBSalirActionPerformed
+
+    private void jBBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBorrarActionPerformed
+        
+        x.borrarContacto(Long.parseLong(jTTelefono.getText()));
+        JOptionPane.showConfirmDialog(this, "Desea eliminar el contacto?");
+        
+    }//GEN-LAST:event_jBBorrarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
