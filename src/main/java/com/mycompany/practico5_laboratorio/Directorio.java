@@ -2,8 +2,10 @@
 package com.mycompany.practico5_laboratorio;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
@@ -66,30 +68,24 @@ public Contacto buscarContacto(long input_telefono){
         return null;
 }
 
-public Long buscarTelefono(String apellido){
+public Set<Long> buscarTelefono(String apellido){
 
+    Set<Long> telefonosEncontrados = new HashSet<>();
     
-    /*Se utiliza este FOR con el metodo "Entry" que devuelve la dupla de valores del TreeMap(Telefono, Contacto)*/
-    /*Para despues poder compararlos, y en caso de encontrarlo se retorna el telefono asociado*/
- for (Entry<Long, Contacto> entry : contactos.entrySet()) {
-         
-     /*Aca se guarda en la variable de tipo Contacto el contacto que coincide con la key(Telefono)*/
-        Contacto contacto = entry.getValue();
-
-            if (contacto.getApellido().equalsIgnoreCase(apellido)){
-                
-                System.out.println("Telefono encontrado: " + entry.getKey());
-                return entry.getKey();
-                
-                
-                
-            } 
-  }
-            
-         
-           return null;
- 
- }
+    for (Entry<Long, Contacto> entry : contactos.entrySet()){
+    
+    Contacto contacto = entry.getValue();
+    
+    if (contacto.getApellido().equalsIgnoreCase(apellido)){
+    
+        telefonosEncontrados.add(entry.getKey());
+    
+    }
+        
+    }
+    return telefonosEncontrados;
+    
+}
    
    
 

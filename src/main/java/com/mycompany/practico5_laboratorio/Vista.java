@@ -324,11 +324,7 @@ Directorio x = new Directorio();
     private void jBBuscarApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarApellidoActionPerformed
 
         
-        /*SE GUARDA EN LA VARIABLE EL TELEFONO ASOCIADO A ESE APELLIDO*/
-        Long TelAsociado = x.buscarTelefono(jTApellido.getText());
-        
-        /*SE IMPRIME EL NUMERO ASOCIADO*/
-        JOptionPane.showMessageDialog(this, "Numero Asociado: " + TelAsociado);
+       JOptionPane.showMessageDialog(this, "Telefonos encontrados: " + x.buscarTelefono(jTApellido.getText()));
         
     }//GEN-LAST:event_jBBuscarApellidoActionPerformed
 
