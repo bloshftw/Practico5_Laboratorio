@@ -120,6 +120,11 @@ Directorio x = new Directorio();
         jBSalir.setText("Salir");
 
         jBBuscarDireccion.setText("Buscar");
+        jBBuscarDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBuscarDireccionActionPerformed(evt);
+            }
+        });
 
         jBBuscarApellido.setText("Buscar");
         jBBuscarApellido.addActionListener(new java.awt.event.ActionListener() {
@@ -315,6 +320,15 @@ Directorio x = new Directorio();
         JOptionPane.showMessageDialog(this, "Numero Asociado: " + TelAsociado);
         
     }//GEN-LAST:event_jBBuscarApellidoActionPerformed
+
+    private void jBBuscarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarDireccionActionPerformed
+       String ciudadBuscada = jTCiudad.getText();
+       
+      Contacto contac = x.buscarContactos(ciudadBuscada);
+      
+      JOptionPane.showMessageDialog(this, "Contacto encontrado: " + contac);
+      
+    }//GEN-LAST:event_jBBuscarDireccionActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
