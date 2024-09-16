@@ -4,6 +4,7 @@
  */
 package com.mycompany.practico5_laboratorio;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
@@ -332,11 +333,22 @@ Directorio x = new Directorio();
     }//GEN-LAST:event_jBBuscarApellidoActionPerformed
 
     private void jBBuscarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarDireccionActionPerformed
-       String ciudadBuscada = jTCiudad.getText();
-       
-      Contacto contac = x.buscarContactos(ciudadBuscada);
-      
-      JOptionPane.showMessageDialog(this, "Contacto encontrado: " + contac);
+        String ciudadBuscada = jTCiudad.getText();
+    
+        ArrayList<Contacto> contactos = x.buscarContactos(ciudadBuscada); 
+
+        if (contactos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No se encontraron contactos en la ciudad: " + ciudadBuscada);
+        } else {
+            StringBuilder mensaje = new StringBuilder("Contactos encontrados en " + ciudadBuscada + ":\n");
+
+            // Recorremos el ArrayList y concatenamos la información de los contactos
+            for (Contacto contacto : contactos) {
+                mensaje.append(contacto).append("\n");  // Asumimos que Contacto tiene un método toString() que formatea bien su información
+            }
+
+            JOptionPane.showMessageDialog(this, mensaje.toString());
+        }
       
     }//GEN-LAST:event_jBBuscarDireccionActionPerformed
 

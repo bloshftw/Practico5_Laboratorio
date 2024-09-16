@@ -1,6 +1,7 @@
 
 package com.mycompany.practico5_laboratorio;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.TreeMap;
@@ -83,7 +84,7 @@ public Long buscarTelefono(String apellido){
                 
                 
             } 
-            }
+  }
             
          
            return null;
@@ -96,29 +97,18 @@ public Long buscarTelefono(String apellido){
  
 
 
-public Contacto buscarContactos(String ciudad){
+public ArrayList<Contacto> buscarContactos(String ciudad) {
+    ArrayList<Contacto> contactosEncontrados = new ArrayList<>();
 
-       /*Se utiliza este FOR con el metodo "Entry" que devuelve la dupla de valores del TreeMap(Telefono, Contacto)*/
-    /*Para despues poder compararlos, y en caso de encontrarlo se retorna el telefono asociado*/
- for (Entry<Long, Contacto> entry : contactos.entrySet()) {
-         
-     /*Aca se guarda en la variable de tipo Contacto el contacto que coincide con la key(Telefono)*/
-        Contacto contacto = entry.getValue();
+    // Iteramos sobre los valores del TreeMap (que son objetos de tipo Contacto)
+    for (Contacto contacto : contactos.values()) {
+        if (contacto.getCiudad().equalsIgnoreCase(ciudad)) {
+            contactosEncontrados.add(contacto);
+        }
+    }
 
-            if (contacto.getCiudad().equalsIgnoreCase(ciudad)){
-                
-                System.out.println("Contacto encontrado:");
-                return contacto;
-                
-                
-                
-            } 
-            }
-            
-         
-           return null;
- 
- }
+    return contactosEncontrados;
+}
 
 
 
